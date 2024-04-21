@@ -20,7 +20,9 @@ void loop()
     if(actualValue > 100){
       actualValue = 100;
     }
-    Serial.println(actualValue);
+    char buffer[5];
+    snprintf(buffer, sizeof(buffer), "%03d", actualValue); // Format the value with leading zeros
+    Serial.println(buffer); // Print the formatted value
   }
   // int actualValue = sensorValue * 2.5;
   delay(100); // delay in between reads for stability

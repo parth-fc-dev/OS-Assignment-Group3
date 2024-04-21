@@ -87,7 +87,6 @@ static ssize_t serial_read(struct file *filp, char __user *buf, size_t count, lo
     int bytesRead;
 
 
-
     bytesRead = kernel_read(serial_file, buffer, sizeof(buffer), &serial_file->f_pos);
 
     if (bytesRead <= 0) {
